@@ -29,7 +29,10 @@ class TambahData : AppCompatActivity() {
         val hari = c.get(Calendar.DAY_OF_MONTH)
         val jam = c.get(Calendar.HOUR)
         val menit = c.get(Calendar.MINUTE)
-
+        binding.imageButton.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
         binding.tanggal.setOnClickListener {
             val dp = DatePickerDialog(this,DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                 val i:Int=month+1

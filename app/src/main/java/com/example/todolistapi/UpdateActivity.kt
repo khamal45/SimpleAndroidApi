@@ -27,7 +27,10 @@ class UpdateActivity : AppCompatActivity() {
         val hari = c.get(Calendar.DAY_OF_MONTH)
         val jam = c.get(Calendar.HOUR)
         val menit = c.get(Calendar.MINUTE)
-
+        binding1.imageButton.setOnClickListener {
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
         binding1.tanggal.setOnClickListener {
             val dp = DatePickerDialog(this,
                 DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -36,9 +39,8 @@ class UpdateActivity : AppCompatActivity() {
             },tahun,bulan,hari
             ).show()
         }
-        binding1.editTextDate.setOnFocusChangeListener { v, hasFocus ->
-            val dp = DatePickerDialog(this,
-                DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+        binding1.editTextDate.setOnClickListener{
+            val dp = DatePickerDialog(this,DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
                 val i:Int=month+1
                 binding1.editTextDate.setText("" + year +"/" + i+ "/" + dayOfMonth)
             },tahun,bulan,hari
