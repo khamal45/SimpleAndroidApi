@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TodoListApi</string>
+    <string name="server_api">http://192.168.1.26/api/data123/</string>
+</resources>
